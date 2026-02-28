@@ -1,16 +1,40 @@
-# template_app
+# Themis Local RAG
 
-A new Flutter project.
+On-device legal RAG assistant built with Flutter.
 
-## Getting Started
+## What this app does
 
-This project is a starting point for a Flutter application.
+- Runs local AI on Android using a bundled GGUF model.
+- Indexes uploaded PDF/TXT documents locally.
+- Answers questions using retrieval-augmented generation (RAG).
+- Keeps document processing and inference on-device.
 
-A few resources to get you started if this is your first Flutter project:
+## Quick setup (Windows / PowerShell)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Install dependencies:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```powershell
+flutter pub get
+```
+
+2. Download the TinyLlama model into `assets/models`:
+
+```powershell
+Invoke-WebRequest "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q2_K.gguf?download=true" -OutFile "....\template_app\assets\models\tinyllama-1.1b-chat-v1.0.Q2_K.gguf"
+```
+
+3. Run the app:
+
+```powershell
+flutter run
+```
+
+4. In app settings:
+- Enable `Run AI on this device`
+- Tap `Save & Continue`
+
+## Notes
+
+- Model binaries (`*.gguf`) are git-ignored and are not pushed to GitHub.
+- Default model filename expected by the app:
+  - `tinyllama-1.1b-chat-v1.0.Q2_K.gguf`
