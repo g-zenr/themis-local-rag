@@ -1,0 +1,63 @@
+name: template_app
+description: "Athena - Document Intelligence Mobile App"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.8
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # State management
+  flutter_riverpod: ^2.5.0
+  riverpod_annotation: ^2.3.0
+
+  # HTTP + SSE streaming
+  dio: ^5.4.0
+
+  # Secure storage (for Ollama URL + API key if any)
+  flutter_secure_storage: ^9.0.0
+
+  # File picking
+  file_picker: ^8.0.0
+
+  # UI utilities
+  shimmer: ^3.0.0
+  intl: ^0.19.0
+
+  # Local SQLite database (replaces PostgreSQL)
+  drift: ^2.18.0
+  drift_flutter: ^0.2.0
+  sqlite3_flutter_libs: ^0.5.0
+
+  # File system access
+  path_provider: ^2.1.0
+  path: ^1.9.0
+
+  # PDF text extraction (replaces pdfplumber)
+  syncfusion_flutter_pdf: ^27.1.48
+
+  # Network connectivity detection
+  connectivity_plus: ^6.0.0
+  llama_flutter_android: ^0.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  riverpod_generator: ^2.3.0
+  build_runner: ^2.4.0
+  drift_dev: ^2.18.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/
